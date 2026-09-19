@@ -4,14 +4,14 @@
 
 **这是研究工具，不是已验证的上分推荐器。** 目前有可运行的来源监测、输入审计、串行批量执行、断点续跑和伤害汇总。自动设计新阵容由可选的 Codex GitHub Action 执行，需要自己的 API 密钥。完整历史棋盘或引擎版本无法核验时，正式对战会停止并说明原因。
 
-- [Actions：查看每日运行或手动 Run workflow](https://github.com/Mqw7373/tft-patch-research/actions/workflows/research.yml)
+- [Actions：手动 Run workflow 或查看运行记录](https://github.com/Mqw7373/tft-patch-research/actions/workflows/research.yml)
 - [研究规则](docs/protocol.md) · [输入合同](docs/input-contract.md) · [首次研究进展](docs/initial-research.md)
 - [AlphaSim 模拟器](https://tftalphasim.com/simulator.html?locale=en) · [MetaTFT 阵容来源](https://www.metatft.com/comps)
 - [配套多场分析网页](https://mqw7373.github.io/tft-replay-viewer/) · [分析器源码](https://github.com/Mqw7373/tft-replay-viewer)
 
 ## 在 GitHub 上运行
 
-1. Fork 仓库并启用 Actions。`Daily patch research` 每天 **13:17 UTC** 检查一次，也可点击 **Run workflow**。GitHub 定时任务可能延迟，不保证在补丁发布的瞬间启动。
+1. Fork 仓库并启用 Actions。打开 **Actions → Manual patch research → Run workflow**，选择分支后启动。研究仅手动执行，不会每天检查；代码提交和 PR 仍会运行独立的代码测试。
 2. **监测不需要 OpenAI 密钥**：抓取官方补丁、当前引擎目录、严格 NA Diamond+ 前十及推荐棋格。它只报告来源变化，不把网页改字当作确定的数值更新。
 3. 如需自动挖掘，在仓库 **Settings → Secrets and variables → Actions → Secrets** 添加 `OPENAI_API_KEY`。只在 GitHub Secrets 中填写，不提交到代码、Issue或聊天。[Codex Action 官方说明](https://developers.openai.com/codex/github-action/)。
 4. 在同一页面的 **Variables** 中把 `ALPHASIM_RUN_ENABLED` 设为 `true`，允许已经通过校验的方案执行模拟。可选 `RESEARCH_MODEL` 指定账号可用的模型；留空使用 Codex Action 默认值。模型 API 使用自己的计费账号，仓库不提供密钥或免费模型额度。

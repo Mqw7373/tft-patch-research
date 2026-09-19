@@ -1,7 +1,5 @@
-name: Daily patch research
+name: Manual patch research
 on:
-  schedule:
-    - cron: "17 13 * * *"
   workflow_dispatch:
 permissions:
   contents: read
