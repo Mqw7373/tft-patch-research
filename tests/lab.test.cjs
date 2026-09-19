@@ -72,3 +72,14 @@ test("synthetic fixture D(t) does not invent a later sample", () => {
   assert.notEqual(S.damage(b, "my", null, 5).value, null);
   assert.equal(S.damage(b, "my", null, 20).value, null);
 });
+test("missing evidence gates cannot compile a formal benchmark", () => {
+  write("候选阵容.json", { candidates: [] });
+  write("执行清单.json", { gates: {}, historicalOpponents: [] });
+  const result = require("node:child_process").spawnSync(
+    process.execPath,
+    [path.resolve(__dirname, "../scripts/lab.cjs"), "--compile"],
+    { env: process.env, encoding: "utf8" },
+  );
+  assert.notEqual(result.status, 0);
+  assert.match(result.stderr, /BLOCKED/);
+});
