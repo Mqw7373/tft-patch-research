@@ -1,0 +1,72 @@
+name: Daily patch research
+on:
+  schedule:
+    - cron: "17 13 * * *"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: patch-research
+  cancel-in-progress: false
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      ALPHASIM_RUN_ENABLED: ${{ vars.ALPHASIM_RUN_ENABLED }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npx playwright install --with-deps chromium
+      - uses: actions/cache/restore@v4
+        with:
+          path: data
+          key: lab-data-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: lab-data-
+      - name: Collect current sources and recommended boards
+        id: monitor
+        run: npm run monitor
+      - name: Check researcher configuration
+        id: config
+        if: always()
+        env:
+          RESEARCH_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if [ -n "$RESEARCH_KEY" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            mkdir -p reports
+            printf '%s\n' 'AI research is not configured: add the OPENAI_API_KEY repository secret. Source monitoring runs independently. No simulated results were produced.' > reports/research-setup.txt
+            cat reports/research-setup.txt >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Research new compositions
+        if: steps.monitor.outcome == 'success' && steps.config.outputs.enabled == 'true'
+        uses: openai/codex-action@v1
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          prompt-file: .github/prompts/research.md
+          output-file: reports/agent-summary.md
+          model: ${{ vars.RESEARCH_MODEL }}
+          effort: high
+          sandbox: workspace-write
+          codex-args: '["--config", "sandbox_workspace_write.network_access=true", "--config", "web_search=\"live\""]'
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: data
+          key: lab-data-${{ github.run_id }}-${{ github.run_attempt }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: research-report-${{ github.run_id }}
+          path: reports/
+          retention-days: 90
+          if-no-files-found: warn

@@ -1,0 +1,21 @@
+{
+  "name": "tft-patch-research",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "description": "Patch research, audited TFT matchup experiments and D(t) analysis",
+  "scripts": {
+    "test": "node --test tests/*.test.cjs",
+    "monitor": "node scripts/monitor.cjs",
+    "compile": "node scripts/lab.cjs --compile",
+    "pilot": "node scripts/lab.cjs --pilot",
+    "battle": "node scripts/lab.cjs --run",
+    "analyze": "node scripts/lab.cjs --analyze"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "playwright": "1.62.1"
+  }
+}

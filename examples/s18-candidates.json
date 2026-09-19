@@ -1,0 +1,1550 @@
+{
+  "version": "18.2b",
+  "createdAt": "2026-09-18T18:47:17.308002+00:00",
+  "candidates": [
+    {
+      "id": "summoner-defender",
+      "name": "四捍卫召唤：阿兹尔＋巨喙鸟妈妈",
+      "hypothesis": "利用召唤输出与四捍卫前排延长有效攻击时间。阿兹尔与巨喙鸟妈妈得到18.2增强，但这不是18.2b新增增强；热修后的机会是高人口体系经济成本回升后的相对空间。两者伤害类型互补，不能据此推断已克制旧十套。",
+      "positionReason": "拉莫斯独占前排中央优先接敌；慎、奥恩分担两翼。两名装备输出分居后排两侧，降低同吃直线技能的风险；无装备厄斐琉斯用于凑二速射并在右侧提供额外攻击目标。",
+      "route6": "拉莫斯、慎、奥恩、阿兹尔、巨喙鸟妈妈、约里克；先用三召唤和捍卫过渡，装备只临时寄放。",
+      "route7": "加入莉莉娅形成四捍卫；7级只在血量允许且阿兹尔/拉莫斯有较多对子时慢搜，不能把双三星视为必得。",
+      "route8": "约里克换婕拉，加入厄斐琉斯与鸟妈妈形成二速射；主副C仍仅阿兹尔与鸟妈妈。",
+      "economy": "双三费核心的两星/三星做完整2×2四分支。两核心从两星到三星额外购卡至少36金币，尚未计刷新；鸟妈妈始终两星，避免额外追三。三张四费两星也需要资金。",
+      "failureModes": [
+        "前排未撑过第二轮召唤",
+        "召唤物伤害归属或出生时间错误",
+        "两名输出起步慢、D5不足",
+        "双三费追三导致上8与四费二星延迟"
+      ],
+      "mechanisms": {
+        "augments": [],
+        "wisps": [],
+        "historicalStacks": {},
+        "riftbeastAlpha": "Only Mama Beak is Riftbeast, trait not active; no alpha mark",
+        "blackthorn": "Only Azir, trait not active; no sacrifice"
+      },
+      "population": 8,
+      "roles": {
+        "mainCarry": "DA_18_Azir",
+        "mainTank": "DA_18_Rammus",
+        "secondaryCarry": "DA_CrimsonRaptor18"
+      },
+      "traits": [
+        {
+          "name": "喚物大師",
+          "count": 3,
+          "threshold": 3
+        },
+        {
+          "name": "地獄火使者",
+          "count": 1,
+          "threshold": 0
+        },
+        {
+          "name": "妖精",
+          "count": 1,
+          "threshold": 0
+        },
+        {
+          "name": "峽谷巨獸",
+          "count": 1,
+          "threshold": 0
+        },
+        {
+          "name": "捍衛者",
+          "count": 4,
+          "threshold": 4
+        },
+        {
+          "name": "月光使者",
+          "count": 1,
+          "threshold": 0
+        },
+        {
+          "name": "百戰老兵",
+          "count": 1,
+          "threshold": 0
+        },
+        {
+          "name": "神木精靈",
+          "count": 1,
+          "threshold": 0
+        },
+        {
+          "name": "荊棘少女",
+          "count": 1,
+          "threshold": 1
+        },
+        {
+          "name": "處刑者",
+          "count": 1,
+          "threshold": 0
+        },
+        {
+          "name": "速射",
+          "count": 2,
+          "threshold": 2
+        },
+        {
+          "name": "黑荊棘",
+          "count": 1,
+          "threshold": 0
+        }
+      ],
+      "configurations": [
+        {
+          "id": "summoner-defender-2-2",
+          "variedStars": {
+            "DA_18_Azir": 2,
+            "DA_18_Rammus": 2
+          },
+          "lineup": [
+            {
+              "apiName": "DA_18_Rammus",
+              "name": "拉姆斯",
+              "cost": 3,
+              "stars": 2,
+              "position": {
+                "row": 0,
+                "col": 3
+              },
+              "items": [
+                "DA_GargoyleStoneplate",
+                "DA_SpiritVisage",
+                "DA_WarmogsArmor"
+              ],
+              "role": "mainTank",
+              "itemSource": {
+                "type": "observed_three_item_build",
+                "sourceCluster": "423016",
+                "count": 1556,
+                "avgPlacement": 4.3284,
+                "scope": "MetaTFT global build data, not NA-only; observational, not optimality proof"
+              },
+              "itemDetails": [
+                {
+                  "apiName": "DA_GargoyleStoneplate",
+                  "name": "石像鬼磐核",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_SpiritVisage",
+                  "name": "振奮盔甲",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_WarmogsArmor",
+                  "name": "好戰者鎧甲",
+                  "kind": "craftable"
+                }
+              ]
+            },
+            {
+              "apiName": "DA_18_Shen",
+              "name": "慎",
+              "cost": 2,
+              "stars": 2,
+              "position": {
+                "row": 0,
+                "col": 1
+              },
+              "items": []
+            },
+            {
+              "apiName": "DA_18_Ornn",
+              "name": "鄂爾",
+              "cost": 1,
+              "stars": 2,
+              "position": {
+                "row": 0,
+                "col": 5
+              },
+              "items": []
+            },
+            {
+              "apiName": "DA_18_Lillia",
+              "name": "莉莉亞",
+              "cost": 4,
+              "stars": 2,
+              "position": {
+                "row": 1,
+                "col": 4
+              },
+              "items": []
+            },
+            {
+              "apiName": "DA_18_Azir",
+              "name": "阿祈爾",
+              "cost": 3,
+              "stars": 2,
+              "position": {
+                "row": 3,
+                "col": 0
+              },
+              "items": [
+                "DA_GuinsoosRageblade",
+                "DA_RedBuff",
+                "DA_VoidStaff"
+              ],
+              "role": "mainCarry",
+              "itemSource": {
+                "type": "observed_three_item_build",
+                "sourceCluster": "423049",
+                "count": 223,
+                "avgPlacement": 4.0045,
+                "scope": "MetaTFT global build data, not NA-only; observational, not optimality proof"
+              },
+              "itemDetails": [
+                {
+                  "apiName": "DA_GuinsoosRageblade",
+                  "name": "鬼索的狂暴之刃",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_RedBuff",
+                  "name": "紅Buff",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_VoidStaff",
+                  "name": "虛空之杖",
+                  "kind": "craftable"
+                }
+              ]
+            },
+            {
+              "apiName": "DA_CrimsonRaptor18",
+              "name": "巨喙鳥媽媽",
+              "cost": 3,
+              "stars": 2,
+              "position": {
+                "row": 3,
+                "col": 5
+              },
+              "items": [
+                "DA_GuinsoosRageblade",
+                "DA_LastWhisper",
+                "DA_KrakensFury"
+              ],
+              "role": "secondaryCarry",
+              "itemSource": {
+                "type": "researcher_assembled_from_three_popular_individual_items",
+                "scope": "Not an observed complete three-item build"
+              },
+              "itemDetails": [
+                {
+                  "apiName": "DA_GuinsoosRageblade",
+                  "name": "鬼索的狂暴之刃",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_LastWhisper",
+                  "name": "最後耳語",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_KrakensFury",
+                  "name": "海妖之怒",
+                  "kind": "craftable"
+                }
+              ]
+            },
+            {
+              "apiName": "DA_18_Zyra",
+              "name": "枷蘿",
+              "cost": 4,
+              "stars": 2,
+              "position": {
+                "row": 3,
+                "col": 2
+              },
+              "items": []
+            },
+            {
+              "apiName": "DA_18_Aphelios",
+              "name": "亞菲利歐",
+              "cost": 4,
+              "stars": 2,
+              "position": {
+                "row": 2,
+                "col": 6
+              },
+              "items": []
+            }
+          ],
+          "sha256": "5f40a2f69f6ec0d93dd29c949ac0f27b5951aa93660c924335857e07eded1b24"
+        },
+        {
+          "id": "summoner-defender-2-3",
+          "variedStars": {
+            "DA_18_Azir": 2,
+            "DA_18_Rammus": 3
+          },
+          "lineup": [
+            {
+              "apiName": "DA_18_Rammus",
+              "name": "拉姆斯",
+              "cost": 3,
+              "stars": 3,
+              "position": {
+                "row": 0,
+                "col": 3
+              },
+              "items": [
+                "DA_GargoyleStoneplate",
+                "DA_SpiritVisage",
+                "DA_WarmogsArmor"
+              ],
+              "role": "mainTank",
+              "itemSource": {
+                "type": "observed_three_item_build",
+                "sourceCluster": "423016",
+                "count": 1556,
+                "avgPlacement": 4.3284,
+                "scope": "MetaTFT global build data, not NA-only; observational, not optimality proof"
+              },
+              "itemDetails": [
+                {
+                  "apiName": "DA_GargoyleStoneplate",
+                  "name": "石像鬼磐核",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_SpiritVisage",
+                  "name": "振奮盔甲",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_WarmogsArmor",
+                  "name": "好戰者鎧甲",
+                  "kind": "craftable"
+                }
+              ]
+            },
+            {
+              "apiName": "DA_18_Shen",
+              "name": "慎",
+              "cost": 2,
+              "stars": 2,
+              "position": {
+                "row": 0,
+                "col": 1
+              },
+              "items": []
+            },
+            {
+              "apiName": "DA_18_Ornn",
+              "name": "鄂爾",
+              "cost": 1,
+              "stars": 2,
+              "position": {
+                "row": 0,
+                "col": 5
+              },
+              "items": []
+            },
+            {
+              "apiName": "DA_18_Lillia",
+              "name": "莉莉亞",
+              "cost": 4,
+              "stars": 2,
+              "position": {
+                "row": 1,
+                "col": 4
+              },
+              "items": []
+            },
+            {
+              "apiName": "DA_18_Azir",
+              "name": "阿祈爾",
+              "cost": 3,
+              "stars": 2,
+              "position": {
+                "row": 3,
+                "col": 0
+              },
+              "items": [
+                "DA_GuinsoosRageblade",
+                "DA_RedBuff",
+                "DA_VoidStaff"
+              ],
+              "role": "mainCarry",
+              "itemSource": {
+                "type": "observed_three_item_build",
+                "sourceCluster": "423049",
+                "count": 223,
+                "avgPlacement": 4.0045,
+                "scope": "MetaTFT global build data, not NA-only; observational, not optimality proof"
+              },
+              "itemDetails": [
+                {
+                  "apiName": "DA_GuinsoosRageblade",
+                  "name": "鬼索的狂暴之刃",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_RedBuff",
+                  "name": "紅Buff",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_VoidStaff",
+                  "name": "虛空之杖",
+                  "kind": "craftable"
+                }
+              ]
+            },
+            {
+              "apiName": "DA_CrimsonRaptor18",
+              "name": "巨喙鳥媽媽",
+              "cost": 3,
+              "stars": 2,
+              "position": {
+                "row": 3,
+                "col": 5
+              },
+              "items": [
+                "DA_GuinsoosRageblade",
+                "DA_LastWhisper",
+                "DA_KrakensFury"
+              ],
+              "role": "secondaryCarry",
+              "itemSource": {
+                "type": "researcher_assembled_from_three_popular_individual_items",
+                "scope": "Not an observed complete three-item build"
+              },
+              "itemDetails": [
+                {
+                  "apiName": "DA_GuinsoosRageblade",
+                  "name": "鬼索的狂暴之刃",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_LastWhisper",
+                  "name": "最後耳語",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_KrakensFury",
+                  "name": "海妖之怒",
+                  "kind": "craftable"
+                }
+              ]
+            },
+            {
+              "apiName": "DA_18_Zyra",
+              "name": "枷蘿",
+              "cost": 4,
+              "stars": 2,
+              "position": {
+                "row": 3,
+                "col": 2
+              },
+              "items": []
+            },
+            {
+              "apiName": "DA_18_Aphelios",
+              "name": "亞菲利歐",
+              "cost": 4,
+              "stars": 2,
+              "position": {
+                "row": 2,
+                "col": 6
+              },
+              "items": []
+            }
+          ],
+          "sha256": "dfbfa31de0a086651b996ba2f42e400e542f8d72c988773fd23524bcda6d2055"
+        },
+        {
+          "id": "summoner-defender-3-2",
+          "variedStars": {
+            "DA_18_Azir": 3,
+            "DA_18_Rammus": 2
+          },
+          "lineup": [
+            {
+              "apiName": "DA_18_Rammus",
+              "name": "拉姆斯",
+              "cost": 3,
+              "stars": 2,
+              "position": {
+                "row": 0,
+                "col": 3
+              },
+              "items": [
+                "DA_GargoyleStoneplate",
+                "DA_SpiritVisage",
+                "DA_WarmogsArmor"
+              ],
+              "role": "mainTank",
+              "itemSource": {
+                "type": "observed_three_item_build",
+                "sourceCluster": "423016",
+                "count": 1556,
+                "avgPlacement": 4.3284,
+                "scope": "MetaTFT global build data, not NA-only; observational, not optimality proof"
+              },
+              "itemDetails": [
+                {
+                  "apiName": "DA_GargoyleStoneplate",
+                  "name": "石像鬼磐核",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_SpiritVisage",
+                  "name": "振奮盔甲",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_WarmogsArmor",
+                  "name": "好戰者鎧甲",
+                  "kind": "craftable"
+                }
+              ]
+            },
+            {
+              "apiName": "DA_18_Shen",
+              "name": "慎",
+              "cost": 2,
+              "stars": 2,
+              "position": {
+                "row": 0,
+                "col": 1
+              },
+              "items": []
+            },
+            {
+              "apiName": "DA_18_Ornn",
+              "name": "鄂爾",
+              "cost": 1,
+              "stars": 2,
+              "position": {
+                "row": 0,
+                "col": 5
+              },
+              "items": []
+            },
+            {
+              "apiName": "DA_18_Lillia",
+              "name": "莉莉亞",
+              "cost": 4,
+              "stars": 2,
+              "position": {
+                "row": 1,
+                "col": 4
+              },
+              "items": []
+            },
+            {
+              "apiName": "DA_18_Azir",
+              "name": "阿祈爾",
+              "cost": 3,
+              "stars": 3,
+              "position": {
+                "row": 3,
+                "col": 0
+              },
+              "items": [
+                "DA_GuinsoosRageblade",
+                "DA_RedBuff",
+                "DA_VoidStaff"
+              ],
+              "role": "mainCarry",
+              "itemSource": {
+                "type": "observed_three_item_build",
+                "sourceCluster": "423049",
+                "count": 223,
+                "avgPlacement": 4.0045,
+                "scope": "MetaTFT global build data, not NA-only; observational, not optimality proof"
+              },
+              "itemDetails": [
+                {
+                  "apiName": "DA_GuinsoosRageblade",
+                  "name": "鬼索的狂暴之刃",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_RedBuff",
+                  "name": "紅Buff",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_VoidStaff",
+                  "name": "虛空之杖",
+                  "kind": "craftable"
+                }
+              ]
+            },
+            {
+              "apiName": "DA_CrimsonRaptor18",
+              "name": "巨喙鳥媽媽",
+              "cost": 3,
+              "stars": 2,
+              "position": {
+                "row": 3,
+                "col": 5
+              },
+              "items": [
+                "DA_GuinsoosRageblade",
+                "DA_LastWhisper",
+                "DA_KrakensFury"
+              ],
+              "role": "secondaryCarry",
+              "itemSource": {
+                "type": "researcher_assembled_from_three_popular_individual_items",
+                "scope": "Not an observed complete three-item build"
+              },
+              "itemDetails": [
+                {
+                  "apiName": "DA_GuinsoosRageblade",
+                  "name": "鬼索的狂暴之刃",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_LastWhisper",
+                  "name": "最後耳語",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_KrakensFury",
+                  "name": "海妖之怒",
+                  "kind": "craftable"
+                }
+              ]
+            },
+            {
+              "apiName": "DA_18_Zyra",
+              "name": "枷蘿",
+              "cost": 4,
+              "stars": 2,
+              "position": {
+                "row": 3,
+                "col": 2
+              },
+              "items": []
+            },
+            {
+              "apiName": "DA_18_Aphelios",
+              "name": "亞菲利歐",
+              "cost": 4,
+              "stars": 2,
+              "position": {
+                "row": 2,
+                "col": 6
+              },
+              "items": []
+            }
+          ],
+          "sha256": "9759e04da6d918357352ccf0e4e83f94ce88997a46947cce0807bb4e68220bba"
+        },
+        {
+          "id": "summoner-defender-3-3",
+          "variedStars": {
+            "DA_18_Azir": 3,
+            "DA_18_Rammus": 3
+          },
+          "lineup": [
+            {
+              "apiName": "DA_18_Rammus",
+              "name": "拉姆斯",
+              "cost": 3,
+              "stars": 3,
+              "position": {
+                "row": 0,
+                "col": 3
+              },
+              "items": [
+                "DA_GargoyleStoneplate",
+                "DA_SpiritVisage",
+                "DA_WarmogsArmor"
+              ],
+              "role": "mainTank",
+              "itemSource": {
+                "type": "observed_three_item_build",
+                "sourceCluster": "423016",
+                "count": 1556,
+                "avgPlacement": 4.3284,
+                "scope": "MetaTFT global build data, not NA-only; observational, not optimality proof"
+              },
+              "itemDetails": [
+                {
+                  "apiName": "DA_GargoyleStoneplate",
+                  "name": "石像鬼磐核",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_SpiritVisage",
+                  "name": "振奮盔甲",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_WarmogsArmor",
+                  "name": "好戰者鎧甲",
+                  "kind": "craftable"
+                }
+              ]
+            },
+            {
+              "apiName": "DA_18_Shen",
+              "name": "慎",
+              "cost": 2,
+              "stars": 2,
+              "position": {
+                "row": 0,
+                "col": 1
+              },
+              "items": []
+            },
+            {
+              "apiName": "DA_18_Ornn",
+              "name": "鄂爾",
+              "cost": 1,
+              "stars": 2,
+              "position": {
+                "row": 0,
+                "col": 5
+              },
+              "items": []
+            },
+            {
+              "apiName": "DA_18_Lillia",
+              "name": "莉莉亞",
+              "cost": 4,
+              "stars": 2,
+              "position": {
+                "row": 1,
+                "col": 4
+              },
+              "items": []
+            },
+            {
+              "apiName": "DA_18_Azir",
+              "name": "阿祈爾",
+              "cost": 3,
+              "stars": 3,
+              "position": {
+                "row": 3,
+                "col": 0
+              },
+              "items": [
+                "DA_GuinsoosRageblade",
+                "DA_RedBuff",
+                "DA_VoidStaff"
+              ],
+              "role": "mainCarry",
+              "itemSource": {
+                "type": "observed_three_item_build",
+                "sourceCluster": "423049",
+                "count": 223,
+                "avgPlacement": 4.0045,
+                "scope": "MetaTFT global build data, not NA-only; observational, not optimality proof"
+              },
+              "itemDetails": [
+                {
+                  "apiName": "DA_GuinsoosRageblade",
+                  "name": "鬼索的狂暴之刃",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_RedBuff",
+                  "name": "紅Buff",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_VoidStaff",
+                  "name": "虛空之杖",
+                  "kind": "craftable"
+                }
+              ]
+            },
+            {
+              "apiName": "DA_CrimsonRaptor18",
+              "name": "巨喙鳥媽媽",
+              "cost": 3,
+              "stars": 2,
+              "position": {
+                "row": 3,
+                "col": 5
+              },
+              "items": [
+                "DA_GuinsoosRageblade",
+                "DA_LastWhisper",
+                "DA_KrakensFury"
+              ],
+              "role": "secondaryCarry",
+              "itemSource": {
+                "type": "researcher_assembled_from_three_popular_individual_items",
+                "scope": "Not an observed complete three-item build"
+              },
+              "itemDetails": [
+                {
+                  "apiName": "DA_GuinsoosRageblade",
+                  "name": "鬼索的狂暴之刃",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_LastWhisper",
+                  "name": "最後耳語",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_KrakensFury",
+                  "name": "海妖之怒",
+                  "kind": "craftable"
+                }
+              ]
+            },
+            {
+              "apiName": "DA_18_Zyra",
+              "name": "枷蘿",
+              "cost": 4,
+              "stars": 2,
+              "position": {
+                "row": 3,
+                "col": 2
+              },
+              "items": []
+            },
+            {
+              "apiName": "DA_18_Aphelios",
+              "name": "亞菲利歐",
+              "cost": 4,
+              "stars": 2,
+              "position": {
+                "row": 2,
+                "col": 6
+              },
+              "items": []
+            }
+          ],
+          "sha256": "67d0f56ada2b9c652eb286a3892fed0d5acbb1eb6583aab22890ce49546b6bcd"
+        }
+      ],
+      "status": "hypothesis_not_benchmarked"
+    },
+    {
+      "id": "diana-vanguard",
+      "name": "四先锋四劫肆：黛安娜＋厄斐琉斯",
+      "hypothesis": "黛安娜的近身群伤与护盾在18.2增强，搭配四先驱承伤、四劫肆续航，厄斐琉斯提供独立远程物理输出。重点检验前10秒压低敌方前排，不能依赖无限续盾的想象。",
+      "positionReason": "守望者置前中吸收第一轮火力，黛安娜从第二排左侧切入两格技能覆盖；无装近战分两翼，厄斐琉斯后排右角独立输出。本案两月光相距较远，邻接收益不额外假定。",
+      "route6": "黛安娜、赫卡里姆、洛、狼人、魔狼、卡蜜尔：四劫肆为主，早期先驱尚未满四。",
+      "route7": "补守望者，卡蜜尔换树精长老，形成四先驱四劫肆；黛安娜对子多时在7级搜三星。",
+      "route8": "补厄斐琉斯；所有辅助两星，守望者两星，黛安娜两星和三星分别测试。",
+      "economy": "只追黛安娜一个三费核心；从两星到三星新增购卡18金币，不含刷新。守望者、树精长老、厄斐琉斯均需两星，牌库竞争可能使8级成型延迟。",
+      "failureModes": [
+        "黛安娜被控或首轮护盾前死亡",
+        "没有重伤、对回复前排乏力",
+        "多近战拥堵与群控暴露",
+        "黛安娜法力40/30来源冲突影响施法频率"
+      ],
+      "mechanisms": {
+        "augments": [],
+        "wisps": [],
+        "historicalStacks": {},
+        "riftbeastAlpha": "DA_Sentinel18; 3 Riftbeasts active. Blue Buff grants allies Mana Regen per Sentinel cast; must validate actual response.",
+        "blackthorn": "Only Warwick; no sacrifice"
+      },
+      "population": 8,
+      "roles": {
+        "mainCarry": "DA_18_Diana",
+        "mainTank": "DA_Sentinel18",
+        "secondaryCarry": "DA_18_Aphelios"
+      },
+      "traits": [
+        {
+          "name": "先鋒戰士",
+          "count": 4,
+          "threshold": 4
+        },
+        {
+          "name": "劫肆者",
+          "count": 4,
+          "threshold": 4
+        },
+        {
+          "name": "妖精",
+          "count": 1,
+          "threshold": 0
+        },
+        {
+          "name": "峽谷巨獸",
+          "count": 3,
+          "threshold": 3
+        },
+        {
+          "name": "月光使者",
+          "count": 2,
+          "threshold": 2
+        },
+        {
+          "name": "神木精靈",
+          "count": 1,
+          "threshold": 0
+        },
+        {
+          "name": "神諭者",
+          "count": 1,
+          "threshold": 0
+        },
+        {
+          "name": "速射",
+          "count": 1,
+          "threshold": 0
+        },
+        {
+          "name": "重裝戰士",
+          "count": 1,
+          "threshold": 0
+        },
+        {
+          "name": "黑荊棘",
+          "count": 1,
+          "threshold": 0
+        }
+      ],
+      "configurations": [
+        {
+          "id": "diana-vanguard-2",
+          "variedStars": {
+            "DA_18_Diana": 2
+          },
+          "lineup": [
+            {
+              "apiName": "DA_Sentinel18",
+              "name": "守望者",
+              "cost": 4,
+              "stars": 2,
+              "position": {
+                "row": 0,
+                "col": 3
+              },
+              "items": [
+                "DA_AdaptiveHelm",
+                "DA_ProtectorsVow",
+                "DA_ProtectorsVow"
+              ],
+              "role": "mainTank",
+              "itemSource": {
+                "type": "observed_three_item_build",
+                "sourceCluster": "423000",
+                "count": 4885,
+                "avgPlacement": 3.6608,
+                "scope": "MetaTFT global build data, not NA-only; observational, not optimality proof"
+              },
+              "itemDetails": [
+                {
+                  "apiName": "DA_AdaptiveHelm",
+                  "name": "適性神盔",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_ProtectorsVow",
+                  "name": "保衛者之誓",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_ProtectorsVow",
+                  "name": "保衛者之誓",
+                  "kind": "craftable"
+                }
+              ],
+              "s18RiftbeastAlphaMarked": true
+            },
+            {
+              "apiName": "DA_18_Hecarim",
+              "name": "赫克林",
+              "cost": 3,
+              "stars": 2,
+              "position": {
+                "row": 0,
+                "col": 1
+              },
+              "items": []
+            },
+            {
+              "apiName": "DA_18_Rakan",
+              "name": "銳空",
+              "cost": 1,
+              "stars": 2,
+              "position": {
+                "row": 0,
+                "col": 5
+              },
+              "items": []
+            },
+            {
+              "apiName": "DA_18_Diana",
+              "name": "黛安娜",
+              "cost": 3,
+              "stars": 2,
+              "position": {
+                "row": 1,
+                "col": 2
+              },
+              "items": [
+                "DA_HandOfJustice",
+                "DA_IonicSpark",
+                "DA_JeweledGauntlet"
+              ],
+              "role": "mainCarry",
+              "itemSource": {
+                "type": "observed_three_item_build",
+                "sourceCluster": "423003",
+                "count": 1633,
+                "avgPlacement": 3.7838,
+                "scope": "MetaTFT global build data, not NA-only; observational, not optimality proof"
+              },
+              "itemDetails": [
+                {
+                  "apiName": "DA_HandOfJustice",
+                  "name": "正義手套",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_IonicSpark",
+                  "name": "離子星火",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_JeweledGauntlet",
+                  "name": "寶石手套",
+                  "kind": "craftable"
+                }
+              ]
+            },
+            {
+              "apiName": "DA_Brambleback18",
+              "name": "樹精長老",
+              "cost": 4,
+              "stars": 2,
+              "position": {
+                "row": 1,
+                "col": 5
+              },
+              "items": []
+            },
+            {
+              "apiName": "DA_18_Warwick",
+              "name": "沃維克",
+              "cost": 2,
+              "stars": 2,
+              "position": {
+                "row": 1,
+                "col": 0
+              },
+              "items": []
+            },
+            {
+              "apiName": "DA_Murkwolf18",
+              "name": "魔狼",
+              "cost": 2,
+              "stars": 2,
+              "position": {
+                "row": 2,
+                "col": 4
+              },
+              "items": []
+            },
+            {
+              "apiName": "DA_18_Aphelios",
+              "name": "亞菲利歐",
+              "cost": 4,
+              "stars": 2,
+              "position": {
+                "row": 3,
+                "col": 6
+              },
+              "items": [
+                "DA_Deathblade",
+                "DA_GuinsoosRageblade",
+                "DA_KrakensFury"
+              ],
+              "role": "secondaryCarry",
+              "itemSource": {
+                "type": "observed_three_item_build",
+                "sourceCluster": "423000",
+                "count": 23555,
+                "avgPlacement": 3.8877,
+                "scope": "MetaTFT global build data, not NA-only; observational, not optimality proof"
+              },
+              "itemDetails": [
+                {
+                  "apiName": "DA_Deathblade",
+                  "name": "死神之刃",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_GuinsoosRageblade",
+                  "name": "鬼索的狂暴之刃",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_KrakensFury",
+                  "name": "海妖之怒",
+                  "kind": "craftable"
+                }
+              ]
+            }
+          ],
+          "sha256": "09608e29bdd004fef785d7240bf8a754208c6bcfde107db33908dd0956ff3108"
+        },
+        {
+          "id": "diana-vanguard-3",
+          "variedStars": {
+            "DA_18_Diana": 3
+          },
+          "lineup": [
+            {
+              "apiName": "DA_Sentinel18",
+              "name": "守望者",
+              "cost": 4,
+              "stars": 2,
+              "position": {
+                "row": 0,
+                "col": 3
+              },
+              "items": [
+                "DA_AdaptiveHelm",
+                "DA_ProtectorsVow",
+                "DA_ProtectorsVow"
+              ],
+              "role": "mainTank",
+              "itemSource": {
+                "type": "observed_three_item_build",
+                "sourceCluster": "423000",
+                "count": 4885,
+                "avgPlacement": 3.6608,
+                "scope": "MetaTFT global build data, not NA-only; observational, not optimality proof"
+              },
+              "itemDetails": [
+                {
+                  "apiName": "DA_AdaptiveHelm",
+                  "name": "適性神盔",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_ProtectorsVow",
+                  "name": "保衛者之誓",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_ProtectorsVow",
+                  "name": "保衛者之誓",
+                  "kind": "craftable"
+                }
+              ],
+              "s18RiftbeastAlphaMarked": true
+            },
+            {
+              "apiName": "DA_18_Hecarim",
+              "name": "赫克林",
+              "cost": 3,
+              "stars": 2,
+              "position": {
+                "row": 0,
+                "col": 1
+              },
+              "items": []
+            },
+            {
+              "apiName": "DA_18_Rakan",
+              "name": "銳空",
+              "cost": 1,
+              "stars": 2,
+              "position": {
+                "row": 0,
+                "col": 5
+              },
+              "items": []
+            },
+            {
+              "apiName": "DA_18_Diana",
+              "name": "黛安娜",
+              "cost": 3,
+              "stars": 3,
+              "position": {
+                "row": 1,
+                "col": 2
+              },
+              "items": [
+                "DA_HandOfJustice",
+                "DA_IonicSpark",
+                "DA_JeweledGauntlet"
+              ],
+              "role": "mainCarry",
+              "itemSource": {
+                "type": "observed_three_item_build",
+                "sourceCluster": "423003",
+                "count": 1633,
+                "avgPlacement": 3.7838,
+                "scope": "MetaTFT global build data, not NA-only; observational, not optimality proof"
+              },
+              "itemDetails": [
+                {
+                  "apiName": "DA_HandOfJustice",
+                  "name": "正義手套",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_IonicSpark",
+                  "name": "離子星火",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_JeweledGauntlet",
+                  "name": "寶石手套",
+                  "kind": "craftable"
+                }
+              ]
+            },
+            {
+              "apiName": "DA_Brambleback18",
+              "name": "樹精長老",
+              "cost": 4,
+              "stars": 2,
+              "position": {
+                "row": 1,
+                "col": 5
+              },
+              "items": []
+            },
+            {
+              "apiName": "DA_18_Warwick",
+              "name": "沃維克",
+              "cost": 2,
+              "stars": 2,
+              "position": {
+                "row": 1,
+                "col": 0
+              },
+              "items": []
+            },
+            {
+              "apiName": "DA_Murkwolf18",
+              "name": "魔狼",
+              "cost": 2,
+              "stars": 2,
+              "position": {
+                "row": 2,
+                "col": 4
+              },
+              "items": []
+            },
+            {
+              "apiName": "DA_18_Aphelios",
+              "name": "亞菲利歐",
+              "cost": 4,
+              "stars": 2,
+              "position": {
+                "row": 3,
+                "col": 6
+              },
+              "items": [
+                "DA_Deathblade",
+                "DA_GuinsoosRageblade",
+                "DA_KrakensFury"
+              ],
+              "role": "secondaryCarry",
+              "itemSource": {
+                "type": "observed_three_item_build",
+                "sourceCluster": "423000",
+                "count": 23555,
+                "avgPlacement": 3.8877,
+                "scope": "MetaTFT global build data, not NA-only; observational, not optimality proof"
+              },
+              "itemDetails": [
+                {
+                  "apiName": "DA_Deathblade",
+                  "name": "死神之刃",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_GuinsoosRageblade",
+                  "name": "鬼索的狂暴之刃",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_KrakensFury",
+                  "name": "海妖之怒",
+                  "kind": "craftable"
+                }
+              ]
+            }
+          ],
+          "sha256": "0192c80b540dc321b7557475bb49cc356e09b0df1a9769c044eb3890adba04b2"
+        }
+      ],
+      "status": "hypothesis_not_benchmarked"
+    },
+    {
+      "id": "ashe-hunter",
+      "name": "八人口四猎四重装：艾希＋希维尔",
+      "hypothesis": "测试艾希更集中的持续伤害配合破甲重伤，四重装拖住前排，希维尔补充远端伤害。固定8人口版本旨在检验无需茂凯历史生命与9级传奇堆叠时的下限；这仍是既有猎手体系的研究变体，并非已证实的新答案。",
+      "positionReason": "阿木木前中优先承伤，蔚和洛分摊侧翼；两名装备远程C分居后排左右端，崔丝塔娜与凯特琳不与其同列扎堆。艾希首发直线由引擎选敌群，需回放确认。",
+      "route6": "蔚、洛、约里克、凯特琳、崔丝塔娜、慎；双猎手与重装过渡，艾希装备由凯特琳临时携带。",
+      "route7": "找到阿木木替换慎，补希维尔；先保证前排二星，保持经济上8。",
+      "route8": "补艾希并转装。艾希未到两星时不算本研究成型输入；8级搜两星五费困难，常规实玩可能需升9，因此此案优先级低于前两案。",
+      "economy": "不追三。艾希两星仅购卡成本15金币，刷新代价不可忽略；需要好运、经济优势或8级已有艾希对子，不能称为稳定8级必成。",
+      "failureModes": [
+        "艾希两星获取困难",
+        "低费无装重装前排上限不足",
+        "阿木木倒下后双C暴露",
+        "普通装约束下缺少高费工具人控制"
+      ],
+      "mechanisms": {
+        "augments": [],
+        "wisps": [],
+        "historicalStacks": {},
+        "primalBlessings": [
+          "turtle"
+        ],
+        "riftbeastAlpha": "No Riftbeast trait",
+        "blackthorn": "No Blackthorn trait"
+      },
+      "population": 8,
+      "roles": {
+        "mainCarry": "DA_18_Ashe",
+        "mainTank": "DA_Amumu18",
+        "secondaryCarry": "DA_18_Sivir"
+      },
+      "traits": [
+        {
+          "name": "先鋒戰士",
+          "count": 1,
+          "threshold": 0
+        },
+        {
+          "name": "喚物大師",
+          "count": 1,
+          "threshold": 0
+        },
+        {
+          "name": "地獄火使者",
+          "count": 1,
+          "threshold": 0
+        },
+        {
+          "name": "女巫",
+          "count": 1,
+          "threshold": 0
+        },
+        {
+          "name": "妖精",
+          "count": 2,
+          "threshold": 2
+        },
+        {
+          "name": "獵手",
+          "count": 4,
+          "threshold": 4
+        },
+        {
+          "name": "百戰老兵",
+          "count": 1,
+          "threshold": 0
+        },
+        {
+          "name": "盛放繁花",
+          "count": 2,
+          "threshold": 0
+        },
+        {
+          "name": "重裝戰士",
+          "count": 4,
+          "threshold": 4
+        },
+        {
+          "name": "野性",
+          "count": 2,
+          "threshold": 2
+        }
+      ],
+      "configurations": [
+        {
+          "id": "ashe-hunter-fixed",
+          "variedStars": {},
+          "lineup": [
+            {
+              "apiName": "DA_Amumu18",
+              "name": "阿姆姆",
+              "cost": 4,
+              "stars": 2,
+              "position": {
+                "row": 0,
+                "col": 3
+              },
+              "items": [
+                "DA_Crownguard",
+                "DA_GargoyleStoneplate",
+                "DA_WarmogsArmor"
+              ],
+              "role": "mainTank",
+              "itemSource": {
+                "type": "observed_three_item_build",
+                "sourceCluster": "423000",
+                "count": 7156,
+                "avgPlacement": 3.71,
+                "scope": "MetaTFT global build data, not NA-only; observational, not optimality proof"
+              },
+              "itemDetails": [
+                {
+                  "apiName": "DA_Crownguard",
+                  "name": "皇冠守衛",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_GargoyleStoneplate",
+                  "name": "石像鬼磐核",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_WarmogsArmor",
+                  "name": "好戰者鎧甲",
+                  "kind": "craftable"
+                }
+              ]
+            },
+            {
+              "apiName": "DA_Vi18",
+              "name": "菲艾",
+              "cost": 3,
+              "stars": 2,
+              "position": {
+                "row": 0,
+                "col": 1
+              },
+              "items": []
+            },
+            {
+              "apiName": "DA_18_Rakan",
+              "name": "銳空",
+              "cost": 1,
+              "stars": 2,
+              "position": {
+                "row": 0,
+                "col": 5
+              },
+              "items": []
+            },
+            {
+              "apiName": "DA_18_Yorick",
+              "name": "約瑞科",
+              "cost": 1,
+              "stars": 2,
+              "position": {
+                "row": 1,
+                "col": 3
+              },
+              "items": []
+            },
+            {
+              "apiName": "DA_18_Ashe",
+              "name": "艾希",
+              "cost": 5,
+              "stars": 2,
+              "position": {
+                "row": 3,
+                "col": 0
+              },
+              "items": [
+                "DA_LastWhisper",
+                "DA_RedBuff",
+                "DA_SpearOfShojin"
+              ],
+              "role": "mainCarry",
+              "itemSource": {
+                "type": "observed_three_item_build",
+                "sourceCluster": "423041",
+                "count": 9879,
+                "avgPlacement": 3.3404,
+                "scope": "MetaTFT global build data, not NA-only; observational, not optimality proof"
+              },
+              "itemDetails": [
+                {
+                  "apiName": "DA_LastWhisper",
+                  "name": "最後耳語",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_RedBuff",
+                  "name": "紅Buff",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_SpearOfShojin",
+                  "name": "精進之矛",
+                  "kind": "craftable"
+                }
+              ]
+            },
+            {
+              "apiName": "DA_18_Sivir",
+              "name": "希維爾",
+              "cost": 4,
+              "stars": 2,
+              "position": {
+                "row": 3,
+                "col": 6
+              },
+              "items": [
+                "DA_InfinityEdge",
+                "DA_SpearOfShojin",
+                "DA_StrikersFlail"
+              ],
+              "role": "secondaryCarry",
+              "itemSource": {
+                "type": "observed_three_item_build",
+                "sourceCluster": "423001",
+                "count": 7722,
+                "reason": "Ashe already carries Red Buff; give Sivir Shojin for casts"
+              },
+              "itemDetails": [
+                {
+                  "apiName": "DA_InfinityEdge",
+                  "name": "無盡之刃",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_SpearOfShojin",
+                  "name": "精進之矛",
+                  "kind": "craftable"
+                },
+                {
+                  "apiName": "DA_StrikersFlail",
+                  "name": "打手連枷",
+                  "kind": "craftable"
+                }
+              ]
+            },
+            {
+              "apiName": "DA_18_Tristana",
+              "name": "崔絲塔娜",
+              "cost": 3,
+              "stars": 2,
+              "position": {
+                "row": 2,
+                "col": 5
+              },
+              "items": []
+            },
+            {
+              "apiName": "DA_18_Caitlyn",
+              "name": "凱特琳",
+              "cost": 2,
+              "stars": 2,
+              "position": {
+                "row": 3,
+                "col": 3
+              },
+              "items": []
+            }
+          ],
+          "sha256": "c4325d295ca6921c033b10ab83f6cea6bb1efe669eaee4a2d49fabb41c50ad3b"
+        }
+      ],
+      "status": "hypothesis_not_benchmarked"
+    }
+  ]
+}
