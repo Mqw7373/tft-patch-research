@@ -46,16 +46,19 @@ async function main() {
     });
     json(path.join(dir, "manifest.json"), manifest);
   }
-  const browser = await chromium.launch({
-    headless: true,
-    ...(process.env.BROWSER_CHANNEL
-      ? { channel: process.env.BROWSER_CHANNEL }
-      : {}),
-  });
+  let browser;
   try {
+    console.log("[monitor] 启动浏览器");
+    browser = await chromium.launch({
+      headless: true,
+      ...(process.env.BROWSER_CHANNEL
+        ? { channel: process.env.BROWSER_CHANNEL }
+        : {}),
+    });
     const p = await browser.newPage({
       viewport: { width: 1500, height: 1200 },
     });
+    console.log("[monitor] 抓取官方版本说明");
     const index =
       "https://teamfighttactics.leagueoflegends.com/en-us/news/game-updates/";
     await p.goto(index, { waitUntil: "domcontentloaded", timeout: 60000 });
@@ -79,6 +82,7 @@ async function main() {
     // A changed article is a review trigger; it is not proof of a numerical hotfix.
     status.previousSnapshot = previous?.snapshot || null;
     try {
+      console.log("[monitor] 抓取 AlphaSim 数值目录");
       await p.goto("https://tftalphasim.com/simulator.html?locale=en", {
         waitUntil: "domcontentloaded",
         timeout: 60000,
@@ -90,7 +94,19 @@ async function main() {
       ]) {
         const url = "https://tftalphasim.com/api/" + name,
           r = await p.request.get(url);
-        if (!r.ok()) throw Error("AlphaSim catalog HTTP " + r.status());
+        if (!r.ok()) {
+          const body = await r.json().catch(() => ({}));
+          status.alphaSimError = {
+            url,
+            httpStatus: r.status(),
+            code:
+              typeof body?.error === "string" ? body.error.slice(0, 100) : null,
+            retryAfter: r.headers()["retry-after"] || body?.retryAfter || null,
+          };
+          throw Error(
+            `AlphaSim catalog HTTP ${r.status()} (${status.alphaSimError.code || "unknown"}); Retry-After: ${status.alphaSimError.retryAfter || "not provided"}. Catalog collection stopped.`,
+          );
+        }
         const body = await r.text();
         JSON.parse(body);
         save("alpha-" + name + ".json", body, url);
@@ -98,6 +114,7 @@ async function main() {
     } catch (e) {
       status.errors.push(e.message);
     }
+    console.log("[monitor] 抓取 NA Diamond+ 前十及推荐棋格");
     const captures = new Map(),
       pending = [];
     const listener = (r) => {
@@ -168,6 +185,7 @@ async function main() {
     if (await situational.count()) await situational.click();
     status.boards = [];
     for (const row of top) {
+      console.log(`[monitor] 推荐棋盘 ${row.rank}/10`);
       const id = String(row.cluster),
         title = p.locator("#row_" + id + " .Comp_Title");
       try {
@@ -230,23 +248,36 @@ async function main() {
         : "partial";
     status.engineParityVerified = false;
     status.researchStatus = "awaiting_evidence_review";
-    // Keep the last successful snapshot immutable; incomplete scrapes cannot replace it.
-    if (status.status === "sources_collected") {
-      json(path.join(out, "latest-snapshot.json"), { directory: relative });
-      json(stateFile, status);
-    } else process.exitCode = 1;
+    if (status.status !== "sources_collected") process.exitCode = 1;
   } catch (e) {
     status.status = "failed";
     status.errors.push(e.message);
+    if (!browser)
+      status.browserHelp = /EPERM|EACCES/.test(e.message)
+        ? "浏览器启动被操作系统或运行环境拒绝。检查原始启动终端的权限与沙箱设置；不要通过关闭沙箱反复重试。"
+        : /Executable doesn't exist/.test(e.message)
+          ? "缺少 Playwright 浏览器，请在项目终端运行 npx playwright install chromium。"
+          : "浏览器未启动，请检查原始错误及 Playwright 安装。";
     process.exitCode = 1;
   } finally {
-    await browser.close();
+    try {
+      await browser?.close();
+    } catch (e) {
+      status.status = "failed";
+      status.errors.push("Browser cleanup: " + e.message);
+      process.exitCode = 1;
+    }
+    // Keep the last successful snapshot immutable; failed runs cannot replace it.
+    if (status.status === "sources_collected") {
+      json(path.join(out, "latest-snapshot.json"), { directory: relative });
+      json(stateFile, status);
+    }
     json(path.join(out, "last-check.json"), status);
     fs.mkdirSync("reports", { recursive: true });
     json("reports/monitor.json", status);
     fs.writeFileSync(
       "reports/monitor.md",
-      `# 版本监测\n\n检查时间：${status.checkedAt}\n\n状态：${status.status}\n\n${status.official?.url || ""}\n\n完整研究与正式对战尚须核验引擎版本、历史十套完整棋盘及阵容输入。监测成功不等于对战完成。\n\n${status.errors.join("\n")}\n`,
+      `# 版本监测\n\n检查时间：${status.checkedAt}\n\n状态：${status.status}\n\n${status.official?.url || ""}\n\n完整研究与正式对战尚须核验引擎版本、历史十套完整棋盘及阵容输入。监测成功不等于对战完成。\n\n${status.errors.join("\n")}\n\n${status.browserHelp || ""}\n`,
     );
     if (process.env.GITHUB_STEP_SUMMARY)
       fs.appendFileSync(
@@ -261,4 +292,4 @@ if (require.main === module)
     console.error(e);
     process.exitCode = 1;
   });
-module.exports = { rank };
+module.exports = { rank, main };

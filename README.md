@@ -69,6 +69,29 @@ D(t)取不晚于t的最后一个累计伤害采样。短局缺测，不补零、
 
 ## 本地复现
 
+### 执行结束但正式对战为 0 场
+
+这表示研究被输入或运行条件阻塞，不代表模拟完成。查看 `reports/research.md` 和 `reports/monitor.json`：
+
+| 提示 | 含义与处理 |
+|---|---|
+| 浏览器 `EPERM` / `EACCES` | 操作系统或运行环境拒绝启动。检查启动研究的终端权限、沙箱和安全软件记录；不能仅凭错误码认定具体原因，也不应自动关闭沙箱。 |
+| `Executable doesn't exist` | Playwright 浏览器未安装，在项目终端运行 `npx playwright install chromium`。 |
+| AlphaSim `503 / rate_limit_unavailable` | 服务端返回数据不可用。保留错误码及 `Retry-After`，等待服务恢复后手动重试；更换模型不会解决。 |
+| 缺少上一版本历史棋盘 | 新克隆的仓库不包含本地 `data/`。恢复有真实来源的旧快照，或先建立当前基线供下一版本使用；不能用当前榜单冒充上版本。 |
+| 对战开关未启用 | 在启动研究的同一个终端设置 `ALPHASIM_RUN_ENABLED=true`。GitHub 仓库变量不会自动传到本机终端。 |
+
+Windows PowerShell 中启用已获授权的模拟：
+
+```powershell
+$env:ALPHASIM_RUN_ENABLED = "true"
+npm run research:codex
+```
+
+开关只允许请求模拟，不能跳过历史、引擎、机制核验，也不能解决服务端 503。启动器运行期间会持有研究会话；桌面端显示“已在另一个应用中打开”时，在原始终端查看进度或用 Ctrl+C 中断，等待启动器退出后再回桌面端重试。
+
+### 安装与执行
+
 需要 Node.js 22+。
 
 ```sh
