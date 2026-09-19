@@ -1,10 +1,12 @@
 {
   "name": "tft-patch-research",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "license": "MIT",
   "description": "Patch research, audited TFT matchup experiments and D(t) analysis",
   "scripts": {
+    "research:codex": "node scripts/codex.cjs",
+    "codex:check": "node scripts/codex.cjs --check",
     "test": "node --test tests/*.test.cjs",
     "monitor": "node scripts/monitor.cjs",
     "compile": "node scripts/lab.cjs --compile",

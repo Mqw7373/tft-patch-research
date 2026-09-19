@@ -5,3 +5,5 @@ reports/
 .env.*
 !.env.example
 *.log
+.codex-session.json
+.codex-research.lock

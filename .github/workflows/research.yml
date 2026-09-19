@@ -1,6 +1,14 @@
 name: Manual patch research
 on:
   workflow_dispatch:
+    inputs:
+      backend:
+        description: "运行方式：cloud-api 需要 API Key；local-codex 需要自己的 runner"
+        type: choice
+        default: cloud-api
+        options:
+          - cloud-api
+          - local-codex
 permissions:
   contents: read
 concurrency:
@@ -8,6 +16,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   research:
+    if: inputs.backend != 'local-codex'
     runs-on: ubuntu-latest
     timeout-minutes: 90
     env:
@@ -42,7 +51,7 @@ jobs:
           else
             echo "enabled=false" >> "$GITHUB_OUTPUT"
             mkdir -p reports
-            printf '%s\n' 'AI research is not configured: add the OPENAI_API_KEY repository secret. Source monitoring runs independently. No simulated results were produced.' > reports/research-setup.txt
+            printf '%s\n' 'Cloud AI is not configured: add OPENAI_API_KEY, or use npm run research:codex on your computer (local-codex in Actions requires your own runner). Source monitoring runs independently. No simulated results were produced.' > reports/research-setup.txt
             cat reports/research-setup.txt >> "$GITHUB_STEP_SUMMARY"
           fi
       - name: Research new compositions
@@ -65,6 +74,32 @@ jobs:
         if: always()
         with:
           name: research-report-${{ github.run_id }}
+          path: reports/
+          retention-days: 90
+          if-no-files-found: warn
+  local-codex:
+    if: inputs.backend == 'local-codex'
+    runs-on: [self-hosted, tft-codex]
+    timeout-minutes: 90
+    env:
+      ALPHASIM_RUN_ENABLED: ${{ vars.ALPHASIM_RUN_ENABLED }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+          clean: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: npm run codex:check
+      - run: npm test
+      - run: npm run research:codex
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: codex-research-report-${{ github.run_id }}
           path: reports/
           retention-days: 90
           if-no-files-found: warn
